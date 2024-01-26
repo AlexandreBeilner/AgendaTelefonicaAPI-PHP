@@ -22,7 +22,7 @@ class MySQL
     /**
      * @return PDO
      */
-    public function setDB()
+    public function setDB(): PDO
     {
         try {
             return new PDO(
@@ -38,7 +38,7 @@ class MySQL
      * @param $id
      * @return string
      */
-    public function delete($tabela, $id)
+    public function delete($tabela, $id): string
     {
         $consultaDelete = 'DELETE FROM ' . $tabela . ' WHERE id = :id';
         if ($tabela && $id) {
@@ -61,7 +61,7 @@ class MySQL
      * @param $tabela
      * @return array
      */
-    public function getAll($tabela)
+    public function getAll($tabela): array
     {
         if ($tabela) {
             $consulta = 'SELECT * FROM ' . $tabela;

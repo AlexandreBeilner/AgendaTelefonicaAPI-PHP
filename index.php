@@ -5,7 +5,7 @@ use Util\jsonUtil;
 use Util\RotasUtil;
 use Validator\RequestValidator;
 
-include ('bootstrap.php');
+include('bootstrap.php');
 
 try {
     $RequestValidator = new RequestValidator(RotasUtil::getRotas());
@@ -15,7 +15,7 @@ try {
     $JsonUtil = new jsonUtil();
     $JsonUtil->processarArrayParaRetornar($retorno);
 
-}catch (Exception $exception){
+} catch (Exception $exception) {
     echo json_encode([
         ConstantesGenericasUtil::TIPO => ConstantesGenericasUtil::TIPO_ERRO,
         ConstantesGenericasUtil::RESPOSTA => $exception->getMessage()
